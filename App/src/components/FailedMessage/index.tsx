@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, SubTitle, Title, Button, Bold } from './styles'
 
 interface PropsError {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onPress: any
 }
 

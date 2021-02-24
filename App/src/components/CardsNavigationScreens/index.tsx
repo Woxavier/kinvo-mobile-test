@@ -12,26 +12,38 @@ import {
   TextContainer
 } from './styles'
 
-import Funds from '../../../assets/funds.png'
-
 import { NewOrClosed } from '../NewOrClosed'
 
-export default function CardFunds({ onPress }: any) {
+interface PropsCards {
+  onPress: any
+  title: string
+  info: string
+  img: any
+  isNewBolder: boolean
+}
+
+export default function CardsNavigationScreens({
+  onPress,
+  title,
+  info,
+  img,
+  isNewBolder
+}: PropsCards) {
   return (
     <Container onStartShouldSetResponder={onPress}>
       <Content>
         <ContentLeft>
           <ImgContainer>
-            <Img source={Funds}></Img>
+            <Img source={img}></Img>
           </ImgContainer>
 
           <TextContainer>
-            <Bold>Fundos</Bold>
-            <Info>De investimentos</Info>
+            <Bold>{title}</Bold>
+            <Info>{info}</Info>
           </TextContainer>
         </ContentLeft>
 
-        <NewOrClosed status={1} />
+        {isNewBolder ? <NewOrClosed status={1} /> : <></>}
       </Content>
     </Container>
   )
