@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import CardNewFund from '../../components/CardNewFund'
-import FailedMessage from '../../components/FailedMessage'
-import HeaderScreens from '../../components/HeaderScreens'
-import Loading from '../../components/Loading'
+import CardNewFund from '../../shared/components/CardNewFund'
+import FailedMessage from '../../shared/components/FailedMessage'
+import HeaderScreens from '../../shared/components/HeaderScreens'
+import Loading from '../../shared/components/Loading'
 import { Container, Wrapper } from './styles'
 
 interface Props {

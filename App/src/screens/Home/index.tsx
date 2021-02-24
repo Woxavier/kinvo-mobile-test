@@ -2,13 +2,13 @@
 
 import React from 'react'
 
-import CardsNavigationScreens from '../../components/CardsNavigationScreens'
+import CardsNavigationScreens from '../../shared/components/CardsNavigationScreens'
 
 import { Wrapper, Header, Title } from './styles'
 
-import Funds from '../../../assets/funds.png'
-import Pension from '../../../assets/pension.png'
-import Actions from '../../../assets/actions.png'
+import Funds from '../../assets/funds.png'
+import Pension from '../../assets/pension.png'
+import Actions from '../../assets/actions.png'
 
 export default function Home({ navigation }: any) {
   function navigateToScreens(screen: string) {

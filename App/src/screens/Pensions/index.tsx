@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderScreens from '../../components/HeaderScreens'
-import PensionFilter from '../../components/PensionsFilter'
+import HeaderScreens from '../../shared/components/HeaderScreens'
+import PensionFilter from '../../shared/components/PensionsFilter'
 import { Container, Div, Header, Wrapper } from './styles'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

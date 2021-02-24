@@ -1,6 +1,6 @@
 import React from 'react'
 
-import colors from '../../utils/colors'
+import colors from '../../styles/colors/colors'
 
 import { NewOrClosed } from '../NewOrClosed'
 import Percentage from '../Percentage'

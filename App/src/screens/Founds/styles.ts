@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import colors from '../../utils/colors'
+import colors from '../../shared/styles/colors/colors'
 
 export const Wrapper = styled.ScrollView`
   flex: 1;
