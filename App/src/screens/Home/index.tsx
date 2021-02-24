@@ -2,15 +2,17 @@
 
 import React from 'react'
 
-import CardActions from '../../components/CardActions'
-import CardsFunds from '../../components/CardFunds'
-import CardPensions from '../../components/CardPension'
+import CardsNavigationScreens from '../../components/CardsNavigationScreens'
 
 import { Wrapper, Header, Title } from './styles'
 
+import Funds from '../../../assets/funds.png'
+import Pension from '../../../assets/pension.png'
+import Actions from '../../../assets/actions.png'
+
 export default function Home({ navigation }: any) {
-  function navigateToFunds() {
-    navigation.navigate('Fundos')
+  function navigateToScreens(screen: string) {
+    navigation.navigate(screen)
   }
 
   return (
@@ -20,9 +22,27 @@ export default function Home({ navigation }: any) {
           <Title>Desafio</Title>
         </Header>
 
-        <CardActions />
-        <CardsFunds onPress={navigateToFunds} />
-        <CardPensions />
+        <CardsNavigationScreens
+          isNewBolder={false}
+          title="Ações"
+          info="Nacionais"
+          img={Actions}
+          onPress={() => navigateToScreens('Fundos')}
+        />
+        <CardsNavigationScreens
+          title="Fundos"
+          info="De investimentos"
+          img={Funds}
+          onPress={() => navigateToScreens('Fundos')}
+          isNewBolder={true}
+        />
+        <CardsNavigationScreens
+          title="Previdências"
+          info="Privadas"
+          img={Pension}
+          onPress={() => navigateToScreens('Previdencia')}
+          isNewBolder={false}
+        />
       </Wrapper>
     </>
   )
