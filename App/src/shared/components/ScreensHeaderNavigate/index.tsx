@@ -1,5 +1,7 @@
+//Dependencies
 import React from 'react'
 
+//Styles
 import { Container, GoBack, Title } from './styles'
 
 import { AntDesign } from '@expo/vector-icons'

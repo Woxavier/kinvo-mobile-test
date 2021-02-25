@@ -1,11 +1,8 @@
+//Dependencies
 import React from 'react'
 
+//Styles
 import colors from '../../../../shared/styles/colors'
-
-import NewOrClosedLabel from '../../../../shared/components/NewOrClosedLabel'
-import Percentage from '../../../../shared/components/Percentage'
-import Rating from '../../../../shared/components/Rating'
-
 import {
   Container,
   DivTitle,
@@ -17,6 +14,13 @@ import {
   TitleView,
   Minimun
 } from './styles'
+
+//Components
+import {
+  NewOrClosedLabel,
+  Percentage,
+  Rating
+} from '../../../../shared/components'
 
 interface CardProps {
   dados: {

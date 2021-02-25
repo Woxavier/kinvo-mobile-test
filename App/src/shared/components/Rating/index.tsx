@@ -1,6 +1,9 @@
+//Dependecies
 import React, { useEffect, useState } from 'react'
 
 import { Entypo } from '@expo/vector-icons'
+
+//Styles
 import { Container } from './styles'
 
 interface ratingProps {

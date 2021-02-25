@@ -1,4 +1,7 @@
+//Dependencies
 import React from 'react'
+
+//Style
 import { Container, SubTitle, Title, Button, Bold } from './styles'
 
 interface PropsError {

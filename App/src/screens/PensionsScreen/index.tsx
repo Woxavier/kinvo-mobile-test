@@ -1,6 +1,11 @@
+//Dependencies
 import React from 'react'
+
+//Components
 import ScreensHeaderNavigate from '../../shared/components/ScreensHeaderNavigate'
 import PensionFilter from './PensionsFilter'
+
+//Style
 import { Container, Div, Header, Wrapper } from './styles'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,5 +1,7 @@
+//Dependencies
 import React from 'react'
 
+//Styles
 import { ContainerClosed, ContainerNew, Text } from './styles'
 
 interface PropStatus {

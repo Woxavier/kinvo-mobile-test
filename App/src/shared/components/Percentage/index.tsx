@@ -1,5 +1,7 @@
+//Dependencies
 import React from 'react'
 
+//Styles
 import { ValueNegative, ValuePostive, ValueZero, Container } from './styles'
 
 import { Feather } from '@expo/vector-icons'

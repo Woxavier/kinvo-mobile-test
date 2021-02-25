@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+//Dependencies
 import React from 'react'
 
+//Components
 import CardsNavigationScreens from './components/CardsNavigationScreens'
 
+//Styles
 import { Wrapper, Header, Title } from './styles'
 
-import Funds from '../../assets/funds.png'
-import Pension from '../../assets/pension.png'
-import Actions from '../../assets/actions.png'
+//Assets
+import { Funds, Pension, Actions } from '../../assets'
 
 export default function HomeScreen({ navigation }: any) {
   function navigateToScreens(screen: string) {

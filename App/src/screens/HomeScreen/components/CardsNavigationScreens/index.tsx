@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+//Dependencies
 import React from 'react'
 
+//Styles
 import {
   Bold,
   Container,
@@ -12,6 +14,7 @@ import {
   TextContainer
 } from './styles'
 
+//Components
 import NewOrClosedLabel from '../../../../shared/components/NewOrClosedLabel'
 
 interface PropsCards {

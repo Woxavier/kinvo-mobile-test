@@ -1,4 +1,7 @@
+//Dependencies
 import React from 'react'
+
+//Styles
 import { Container, Title } from './styles'
 
 interface PropsTitle {
