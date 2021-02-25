@@ -12,7 +12,7 @@ import {
   TextContainer
 } from './styles'
 
-import { NewOrClosed } from '../NewOrClosed'
+import NewOrClosedLabel from '../../../../shared/components/NewOrClosedLabel'
 
 interface PropsCards {
   onPress: any
@@ -43,7 +43,7 @@ export default function CardsNavigationScreens({
           </TextContainer>
         </ContentLeft>
 
-        {isNewBolder ? <NewOrClosed status={1} /> : <></>}
+        {isNewBolder ? <NewOrClosedLabel status={1} /> : <></>}
       </Content>
     </Container>
   )

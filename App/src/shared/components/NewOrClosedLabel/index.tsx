@@ -6,7 +6,7 @@ interface PropStatus {
   status: number
 }
 
-export function NewOrClosed({ status }: PropStatus) {
+export default function NewOrClosedLabel({ status }: PropStatus) {
   if (status == 1) {
     return (
       <ContainerNew>

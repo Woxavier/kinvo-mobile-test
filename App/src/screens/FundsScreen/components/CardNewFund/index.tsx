@@ -1,10 +1,10 @@
 import React from 'react'
 
-import colors from '../../styles/colors/colors'
+import colors from '../../../../shared/styles/colors'
 
-import { NewOrClosed } from '../NewOrClosed'
-import Percentage from '../Percentage'
-import Rating from '../Rating'
+import NewOrClosedLabel from '../../../../shared/components/NewOrClosedLabel'
+import Percentage from '../../../../shared/components/Percentage'
+import Rating from '../../../../shared/components/Rating'
 
 import {
   Container,
@@ -50,7 +50,7 @@ export default function CardNewFund({ dados }: CardProps) {
           </SubTitle>
         </TitleView>
 
-        <NewOrClosed status={dados.status} />
+        <NewOrClosedLabel status={dados.status} />
       </Header>
 
       <DivTitle />

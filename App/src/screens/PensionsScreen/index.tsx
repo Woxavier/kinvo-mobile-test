@@ -1,17 +1,20 @@
 import React from 'react'
-import HeaderScreens from '../../shared/components/HeaderScreens'
-import PensionFilter from '../../shared/components/PensionsFilter'
+import ScreensHeaderNavigate from '../../shared/components/ScreensHeaderNavigate'
+import PensionFilter from './PensionsFilter'
 import { Container, Div, Header, Wrapper } from './styles'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Pensions({ navigation }: any) {
-  function navigateToHome() {
+export default function PensionsScreen({ navigation }: any) {
+  function onPressNavigateToHome() {
     navigation.navigate('Desafio')
   }
 
   return (
     <Wrapper>
-      <HeaderScreens onPress={navigateToHome} title="Previdência" />
+      <ScreensHeaderNavigate
+        onPress={onPressNavigateToHome}
+        title="Previdência"
+      />
 
       <Container>
         <Header>

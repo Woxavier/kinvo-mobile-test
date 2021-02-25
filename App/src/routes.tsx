@@ -2,9 +2,9 @@ import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Home from './screens/Home'
-import Founds from './screens/Founds'
-import Pensions from './screens/Pensions'
+import HomeScreen from './screens/HomeScreen'
+import FundsScreen from './screens/FundsScreen'
+import PensionsScreen from './screens/PensionsScreen'
 
 const Stack = createStackNavigator()
 
@@ -13,17 +13,17 @@ export default function Routes() {
     <Stack.Navigator initialRouteName="Desafio">
       <Stack.Screen
         name="Desafio"
-        component={Home}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Fundos"
-        component={Founds}
+        component={FundsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Previdencia"
-        component={Pensions}
+        component={PensionsScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

@@ -10,7 +10,7 @@ interface PropsHeader {
   onPress: any
 }
 
-export default function HeaderScreens({ title, onPress }: PropsHeader) {
+export default function ScreensHeaderNavigate({ title, onPress }: PropsHeader) {
   return (
     <Container>
       <GoBack onStartShouldSetResponder={onPress}>

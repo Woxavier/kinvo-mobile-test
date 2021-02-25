@@ -1,10 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+// Dependencies
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import CardNewFund from '../../shared/components/CardNewFund'
-import FailedMessage from '../../shared/components/FailedMessage'
-import HeaderScreens from '../../shared/components/HeaderScreens'
-import Loading from '../../shared/components/Loading'
+
+// Components
+import { CardNewFund } from './components'
+import {
+  FailedMessage,
+  ScreensHeaderNavigate,
+  Loading
+} from '../../shared/components'
+
+//Styles
 import { Container, Wrapper } from './styles'
 
 interface Props {
@@ -16,13 +24,13 @@ interface Props {
   status: number
 }
 
-export default function Founds({ navigation }: any) {
+export default function FundsScreen({ navigation }: any) {
   const [data, setData] = useState<[Props]>()
   const [validResponse, setValidResponse] = useState(false)
   const [requestFailed, setRequestFailed] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  function navigateToHome() {
+  function onPressNavigateToHome() {
     navigation.navigate('Desafio')
   }
 
@@ -47,7 +55,7 @@ export default function Founds({ navigation }: any) {
 
   return (
     <Wrapper>
-      <HeaderScreens onPress={navigateToHome} title="Fundos" />
+      <ScreensHeaderNavigate onPress={onPressNavigateToHome} title="Fundos" />
       <Container>
         {validResponse &&
           data.map((dado, index) => {
