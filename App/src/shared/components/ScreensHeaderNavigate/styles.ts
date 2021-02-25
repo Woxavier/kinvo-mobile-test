@@ -16,7 +16,7 @@ export const Title = styled.Text`
   font-size: 25px;
 `
 
-export const GoBack = styled.View`
+export const GoBack = styled.TouchableOpacity`
   padding: 10px;
   border-radius: 50px;
   background-color: ${colors.purple};

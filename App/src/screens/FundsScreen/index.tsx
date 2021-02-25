@@ -5,17 +5,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 // Components
-import { CardNewFund } from './components'
-import {
-  FailedMessage,
-  ScreensHeaderNavigate,
-  Loading
-} from '../../shared/components'
+// import { CardNewFund } from './components'
 
-//Styles
-import { Container, Wrapper } from './styles'
+//Presentational
+import Presentational from './presentational'
 
-interface Props {
+interface FundsInterface {
   name: string
   type: string
   minimumValue: number
@@ -25,9 +20,8 @@ interface Props {
 }
 
 export default function FundsScreen({ navigation }: any) {
-  const [data, setData] = useState<[Props]>()
-  const [validResponse, setValidResponse] = useState(false)
-  const [requestFailed, setRequestFailed] = useState(false)
+  const [funds, setFunds] = useState<[FundsInterface]>()
+  const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
 
   function onPressNavigateToHome() {
@@ -36,35 +30,31 @@ export default function FundsScreen({ navigation }: any) {
 
   function obtainDataFunds() {
     setLoading(true)
-    setRequestFailed(false)
+    setError(false)
     axios
       .get('https://d68b5a2f-8234-4863-9c81-7c8a95dff8eb.mock.pstmn.io/funds')
       .then((response) => {
-        setData(response.data.data)
-        setValidResponse(true)
-        setRequestFailed(false)
+        setFunds(response.data.data)
+        setError(false)
         setLoading(false)
       })
       .catch(() => {
-        setRequestFailed(true)
+        setError(true)
         setLoading(false)
       })
   }
 
   useEffect(() => obtainDataFunds(), [])
 
-  return (
-    <Wrapper>
-      <ScreensHeaderNavigate onPress={onPressNavigateToHome} title="Fundos" />
-      <Container>
-        {validResponse &&
-          data.map((dado, index) => {
-            return <CardNewFund dados={dado} key={index} />
-          })}
-      </Container>
+  function onPressRetry() {
+    obtainDataFunds()
+  }
 
-      {loading && <Loading />}
-      {requestFailed && <FailedMessage onPress={getDataFunds} />}
-    </Wrapper>
-  )
+  return React.createElement(Presentational, {
+    onPressNavigateToHome,
+    loading,
+    error,
+    funds,
+    onPressRetry
+  })
 }

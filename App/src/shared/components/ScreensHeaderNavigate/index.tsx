@@ -15,7 +15,7 @@ interface PropsHeader {
 export default function ScreensHeaderNavigate({ title, onPress }: PropsHeader) {
   return (
     <Container>
-      <GoBack onStartShouldSetResponder={onPress}>
+      <GoBack onPress={onPress}>
         <AntDesign name="left" size={20} color="#fff" />
       </GoBack>
 

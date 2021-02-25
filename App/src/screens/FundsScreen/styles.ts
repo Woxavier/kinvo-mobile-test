@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import colors from '../../shared/styles/colors'
 
-export const Wrapper = styled.ScrollView`
+export const Wrapper = styled.SafeAreaView`
   flex: 1;
   background-color: ${colors.gray};
 `
