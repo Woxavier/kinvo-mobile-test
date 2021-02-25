@@ -25,7 +25,7 @@ interface PropsCards {
   isNewBolder: boolean
 }
 
-export default function CardsNavigationScreens({
+export default function NavigationScreensCard({
   onPress,
   title,
   info,

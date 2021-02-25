@@ -34,7 +34,7 @@ export default function FundsScreen({ navigation }: any) {
     navigation.navigate('Desafio')
   }
 
-  function getDataFunds() {
+  function obtainDataFunds() {
     setLoading(true)
     setRequestFailed(false)
     axios
@@ -51,7 +51,7 @@ export default function FundsScreen({ navigation }: any) {
       })
   }
 
-  useEffect(() => getDataFunds(), [])
+  useEffect(() => obtainDataFunds(), [])
 
   return (
     <Wrapper>

@@ -1,3 +1,3 @@
-import CardNewFund from './CardNewFund'
+import CardNewFund from './NewFundCard'
 
 export { CardNewFund }

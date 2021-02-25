@@ -4,7 +4,7 @@
 import React from 'react'
 
 //Components
-import CardsNavigationScreens from './components/CardsNavigationScreens'
+import NavigationScreensCard from './components/NavigationScreensCard'
 
 //Styles
 import { Wrapper, Header, Title } from './styles'
@@ -13,7 +13,7 @@ import { Wrapper, Header, Title } from './styles'
 import { Funds, Pension, Actions } from '../../assets'
 
 export default function HomeScreen({ navigation }: any) {
-  function navigateToScreens(screen: string) {
+  function onPressnavigateToScreens(screen: string) {
     navigation.navigate(screen)
   }
 
@@ -24,25 +24,25 @@ export default function HomeScreen({ navigation }: any) {
           <Title>Desafio</Title>
         </Header>
 
-        <CardsNavigationScreens
+        <NavigationScreensCard
           isNewBolder={false}
           title="Ações"
           info="Nacionais"
           img={Actions}
-          onPress={() => navigateToScreens('Fundos')}
+          onPress={() => onPressnavigateToScreens('Fundos')}
         />
-        <CardsNavigationScreens
+        <NavigationScreensCard
           title="Fundos"
           info="De investimentos"
           img={Funds}
-          onPress={() => navigateToScreens('Fundos')}
+          onPress={() => onPressnavigateToScreens('Fundos')}
           isNewBolder={true}
         />
-        <CardsNavigationScreens
+        <NavigationScreensCard
           title="Previdências"
           info="Privadas"
           img={Pension}
-          onPress={() => navigateToScreens('Previdencia')}
+          onPress={() => onPressnavigateToScreens('Previdencia')}
           isNewBolder={false}
         />
       </Wrapper>
