@@ -4,9 +4,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-// Components
-// import { CardNewFund } from './components'
-
 //Presentational
 import Presentational from './presentational'
 
@@ -22,33 +19,39 @@ interface FundsInterface {
 export default function FundsScreen({ navigation }: any) {
   const [funds, setFunds] = useState<[FundsInterface]>()
   const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   function onPressNavigateToHome() {
     navigation.navigate('Desafio')
   }
 
-  function obtainDataFunds() {
+  function handleSucess() {
+    setLoading(false)
+  }
+
+  function handleFailed() {
+    setError(true)
+    setLoading(false)
+  }
+
+  function onPressRetry() {
     setLoading(true)
-    setError(false)
+    obtainDataFunds()
+  }
+
+  function obtainDataFunds() {
     axios
       .get('https://d68b5a2f-8234-4863-9c81-7c8a95dff8eb.mock.pstmn.io/funds')
       .then((response) => {
         setFunds(response.data.data)
-        setError(false)
-        setLoading(false)
+        handleSucess()
       })
       .catch(() => {
-        setError(true)
-        setLoading(false)
+        handleFailed()
       })
   }
 
   useEffect(() => obtainDataFunds(), [])
-
-  function onPressRetry() {
-    obtainDataFunds()
-  }
 
   return React.createElement(Presentational, {
     onPressNavigateToHome,
