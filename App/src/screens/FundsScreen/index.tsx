@@ -25,11 +25,12 @@ export default function FundsScreen({ navigation }: any) {
     navigation.navigate('Desafio')
   }
 
-  function handleSucess() {
+  function handleSucessGetDataFunds(dataFunds: [FundsInterface]) {
     setLoading(false)
+    setFunds(dataFunds)
   }
 
-  function handleFailed() {
+  function handleFailedGetDataFunds() {
     setError(true)
     setLoading(false)
   }
@@ -39,19 +40,24 @@ export default function FundsScreen({ navigation }: any) {
     obtainDataFunds()
   }
 
-  function obtainDataFunds() {
-    axios
+  async function obtainDataFunds() {
+    const apiResponse = await axios
       .get('https://d68b5a2f-8234-4863-9c81-7c8a95dff8eb.mock.pstmn.io/funds')
       .then((response) => {
-        setFunds(response.data.data)
-        handleSucess()
+        return response.data
       })
-      .catch(() => {
-        handleFailed()
-      })
+
+    if (apiResponse.success) {
+      const { data } = apiResponse
+      handleSucessGetDataFunds(data)
+    } else {
+      handleFailedGetDataFunds()
+    }
   }
 
-  useEffect(() => obtainDataFunds(), [])
+  useEffect(() => {
+    obtainDataFunds()
+  }, [])
 
   return React.createElement(Presentational, {
     onPressNavigateToHome,
