@@ -36,18 +36,21 @@ export default function FundsScreen({ navigation }: any) {
   }
 
   function onPressRetry() {
-    setLoading(true)
     obtainDataFunds()
   }
 
   async function obtainDataFunds() {
+    setLoading(true)
+    setError(false)
+
     const apiResponse = await axios
       .get('https://d68b5a2f-8234-4863-9c81-7c8a95dff8eb.mock.pstmn.io/funds')
       .then((response) => {
         return response.data
       })
+      .catch(() => 'error')
 
-    if (apiResponse.success) {
+    if (apiResponse != undefined) {
       const { data } = apiResponse
       handleSucessGetDataFunds(data)
     } else {

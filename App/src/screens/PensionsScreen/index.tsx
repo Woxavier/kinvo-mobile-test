@@ -1,12 +1,6 @@
 //Dependencies
 import React from 'react'
-
-//Components
-import ScreensHeaderNavigate from '../../shared/components/ScreensHeaderNavigate'
-import PensionFilter from './PensionsFilter'
-
-//Style
-import { Container, Div, Header, Wrapper } from './styles'
+import Presentational from './presentational'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function PensionsScreen({ navigation }: any) {
@@ -14,22 +8,7 @@ export default function PensionsScreen({ navigation }: any) {
     navigation.navigate('Desafio')
   }
 
-  return (
-    <Wrapper>
-      <ScreensHeaderNavigate
-        onPress={onPressNavigateToHome}
-        title="Previdência"
-      />
-
-      <Container>
-        <Header>
-          <PensionFilter title="SEM TAXA" />
-          <PensionFilter title="R$ 100,00" />
-          <PensionFilter title="D + 1" />
-        </Header>
-
-        <Div />
-      </Container>
-    </Wrapper>
-  )
+  return React.createElement(Presentational, {
+    onPressNavigateToHome
+  })
 }
