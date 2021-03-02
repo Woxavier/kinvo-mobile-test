@@ -1,34 +1,37 @@
 //Dependencies
 import React from 'react'
+import { View } from 'react-native'
 
 //Components
 import ScreensHeaderNavigate from '../../shared/components/ScreensHeaderNavigate'
 import PensionFilter from './PensionsFilter'
 
 //Style
-import { Container, Div, Header, Wrapper } from './styles'
+import { createStyles } from './styles'
 
 interface Props {
   onPressNavigateToHome: () => void
 }
 
 export default function Presentational({ onPressNavigateToHome }: Props) {
+  const styles = createStyles
+
   return (
-    <Wrapper>
+    <>
       <ScreensHeaderNavigate
         onPress={onPressNavigateToHome}
         title="Previdência"
       />
 
-      <Container>
-        <Header>
+      <View style={styles.container}>
+        <View style={styles.header}>
           <PensionFilter title="SEM TAXA" />
           <PensionFilter title="R$ 100,00" />
           <PensionFilter title="D + 1" />
-        </Header>
+        </View>
 
-        <Div />
-      </Container>
-    </Wrapper>
+        <View style={styles.div} />
+      </View>
+    </>
   )
 }

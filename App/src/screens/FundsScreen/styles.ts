@@ -1,13 +1,12 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../shared/styles/colors'
 
-export const Wrapper = styled.View`
-  flex: 1;
-  background-color: ${colors.gray};
-`
-
-export const Container = styled.View`
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`
+export const createStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.gray,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center'
+  }
+})

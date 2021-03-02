@@ -1,10 +1,7 @@
 //Dependecies
 import React, { useEffect, useState } from 'react'
 
-import { Entypo } from '@expo/vector-icons'
-
-//Styles
-import { Container } from './styles'
+import Presentational from './presentational'
 
 interface ratingProps {
   value: number
@@ -13,9 +10,8 @@ interface ratingProps {
 
 export default function Rating({ value, color }: ratingProps) {
   const [starsRatingValue, setStarsRatingValue] = useState<Array<number>>([])
-  const [starCompleteRatingValue, setStarCompleteRatingValue] = useState<
-    Array<number>
-  >([])
+  // eslint-disable-next-line prettier/prettier
+  const [starCompleteRatingValue, setStarCompleteRatingValue] = useState<Array<number>>([])
 
   useEffect(() => {
     const ratingValue: Array<number> | null = []
@@ -33,17 +29,9 @@ export default function Rating({ value, color }: ratingProps) {
     setStarCompleteRatingValue(completeRatingValue)
   }, [])
 
-  return (
-    <Container>
-      {starsRatingValue.map((value) => {
-        return <Entypo name="star" size={24} color={color} key={value} />
-      })}
-
-      {starCompleteRatingValue.map((value) => {
-        return (
-          <Entypo name="star-outlined" size={24} color={color} key={value} />
-        )
-      })}
-    </Container>
-  )
+  return React.createElement(Presentational, {
+    starsRatingValue,
+    starCompleteRatingValue,
+    color
+  })
 }

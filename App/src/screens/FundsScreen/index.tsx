@@ -50,7 +50,7 @@ export default function FundsScreen({ navigation }: any) {
       })
       .catch(() => 'error')
 
-    if (apiResponse != undefined) {
+    if (apiResponse.data != undefined) {
       const { data } = apiResponse
       handleSucessGetDataFunds(data)
     } else {

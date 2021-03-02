@@ -1,7 +1,10 @@
-import styled from 'styled-components/native'
+// import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 
-export const LoadingContainer = styled.View`
-  justify-content: center;
-  align-items: center;
-  margin-top: 50%;
-`
+export const createStyles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '50%'
+  }
+})

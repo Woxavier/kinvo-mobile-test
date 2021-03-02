@@ -5,17 +5,20 @@ import React from 'react'
 import NavigationScreensCard from './components/NavigationScreensCard'
 
 //Styles
-import { Container, Header, Title } from './styles'
+import { createStyles } from './styles'
 
 //Assets
 import { Funds, Pension, Actions } from '../../assets'
+import { Text, View } from 'react-native'
 
 export default function Presentational({ onPressNavigateToScreens }) {
+  const styles = createStyles
+
   return (
-    <Container>
-      <Header>
-        <Title>Desafio</Title>
-      </Header>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.Title}>Desafio</Text>
+      </View>
 
       <NavigationScreensCard
         isNewBolder={false}
@@ -38,6 +41,6 @@ export default function Presentational({ onPressNavigateToScreens }) {
         onPress={() => onPressNavigateToScreens('Previdencia')}
         isNewBolder={false}
       />
-    </Container>
+    </View>
   )
 }

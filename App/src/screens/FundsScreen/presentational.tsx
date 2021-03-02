@@ -10,10 +10,10 @@ import {
   ScreensHeaderNavigate,
   Loading
 } from '../../shared/components'
+import { FlatList, View } from 'react-native'
 
 //Styles
-import { Container, Wrapper } from './styles'
-import { FlatList } from 'react-native'
+import { createStyles } from './styles'
 
 const renderItem = ({ item }: any) => <CardNewFund dados={item} />
 
@@ -24,6 +24,8 @@ interface Props {
   funds: any
   onPressRetry: () => void
 }
+
+const styles = createStyles
 
 export function Presentational({
   onPressNavigateToHome,
@@ -53,12 +55,12 @@ export function Presentational({
   }
 
   return (
-    <Wrapper>
+    <>
       <ScreensHeaderNavigate onPress={onPressNavigateToHome} title="Fundos" />
-      <Container>
+      <View style={styles.container}>
         <Content />
-      </Container>
-    </Wrapper>
+      </View>
+    </>
   )
 }
 

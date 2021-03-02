@@ -1,27 +1,28 @@
-import styled from 'styled-components/native'
+// import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../styles/colors'
 
-export const ContainerNew = styled.View`
-  padding: 5px;
-  background-color: ${colors.aqua};
-  width: 70px;
-  height: 30px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-`
-
-export const ContainerClosed = styled.View`
-  padding: 5px;
-  background-color: ${colors.DarkGrey};
-  width: 70px;
-  height: 30px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-`
-
-export const Text = styled.Text`
-  color: #fff;
-  font-weight: bold;
-`
+export const createStyles = StyleSheet.create({
+  containerNew: {
+    padding: 5,
+    backgroundColor: colors.aqua,
+    width: 70,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15
+  },
+  containerClosed: {
+    padding: 5,
+    backgroundColor: colors.DarkGrey,
+    width: 70,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15
+  },
+  text: {
+    color: '#fff',
+    fontWeight: 'bold'
+  }
+})

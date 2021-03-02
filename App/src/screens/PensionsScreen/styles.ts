@@ -1,27 +1,26 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../shared/styles/colors'
 
-export const Wrapper = styled.ScrollView`
-  flex: 1;
-  background-color: ${colors.gray};
-`
-
-export const Container = styled.View`
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px 20px;
-`
-
-export const Header = styled.View`
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-export const Div = styled.View`
-  margin-top: 30px;
-  width: 100%;
-  height: 1px;
-  background-color: ${colors.lightGrey};
-`
+export const createStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.gray,
+    alignItems: 'center',
+    textAlign: 'center',
+    paddingBottom: 30,
+    paddingTop: 30,
+    paddingLeft: 20,
+    paddingRight: 20
+  },
+  header: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  div: {
+    marginTop: 30,
+    width: '100%',
+    height: 1,
+    backgroundColor: colors.lightGrey
+  }
+})

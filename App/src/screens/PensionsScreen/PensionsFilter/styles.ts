@@ -1,14 +1,16 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../../shared/styles/colors'
 
-export const Container = styled.View`
-  padding: 10px;
-  border-radius: 20px;
-  background-color: #fff;
-  width: 100px;
-  align-items: center;
-`
-export const Title = styled.Text`
-  color: ${colors.DarkGrey};
-  font-weight: bold;
-`
+export const createStyles = StyleSheet.create({
+  container: {
+    padding: 10,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    width: 100,
+    alignItems: 'center'
+  },
+  title: {
+    color: colors.DarkGrey,
+    fontWeight: 'bold'
+  }
+})

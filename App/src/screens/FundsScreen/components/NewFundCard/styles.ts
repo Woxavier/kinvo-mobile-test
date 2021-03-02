@@ -1,55 +1,53 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../../../shared/styles/colors'
 
-export const Container = styled.View`
-  width: 90%;
-  background-color: #fff;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 20px;
-`
-export const Header = styled.View`
-  justify-content: space-around;
-  flex-direction: row;
-  padding: 5px;
-`
-
-export const TitleView = styled.View`
-  flex-direction: column;
-`
-
-export const Title = styled.Text`
-  font-size: 20px;
-  color: ${colors.DarkGrey};
-  font-weight: bold;
-  margin-right: 30px;
-`
-
-export const SubTitle = styled.Text`
-  font-size: 14px;
-  color: ${colors.DarkGrey};
-  font-weight: bold;
-`
-
-export const DivTitle = styled.View`
-  border: 1px solid ${colors.gray};
-  margin: 20px 0;
-`
-
-export const Main = styled.View`
-  justify-content: space-between;
-  flex-direction: row;
-  padding-bottom: 20px;
-`
-
-export const Infos = styled.Text`
-  color: ${colors.DarkGrey};
-  font-size: 12px;
-  font-weight: bold;
-`
-
-export const Minimun = styled.Text`
-  font-weight: bold;
-  font-size: 16px;
-  color: ${colors.DarkGrey};
-`
+export const creatStyles = StyleSheet.create({
+  container: {
+    width: '90%',
+    backgroundColor: '#fff',
+    margin: 20,
+    padding: 20,
+    borderRadius: 20
+  },
+  header: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    padding: 5
+  },
+  titleView: {
+    flexDirection: 'column'
+  },
+  title: {
+    fontSize: 20,
+    color: colors.DarkGrey,
+    fontWeight: 'bold',
+    marginRight: 30
+  },
+  subTitle: {
+    fontSize: 14,
+    color: colors.DarkGrey,
+    fontWeight: 'bold'
+  },
+  divTitle: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: colors.gray,
+    marginTop: 10,
+    marginBottom: 20
+  },
+  main: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingBottom: 20
+  },
+  infos: {
+    color: colors.DarkGrey,
+    fontSize: 12,
+    fontWeight: 'bold'
+  },
+  minimum: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: colors.DarkGrey
+  }
+})

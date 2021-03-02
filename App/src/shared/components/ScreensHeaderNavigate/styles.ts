@@ -1,24 +1,23 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../styles/colors'
 
-export const Container = styled.View`
-  height: 120px;
-  background-color: #fff;
-  width: 100%;
-  padding: 30px;
-  align-items: center;
-  flex-direction: row;
-`
-
-export const Title = styled.Text`
-  font-weight: bold;
-  color: ${colors.purple};
-  font-size: 25px;
-`
-
-export const GoBack = styled.TouchableOpacity`
-  padding: 10px;
-  border-radius: 50px;
-  background-color: ${colors.purple};
-  margin-right: 20px;
-`
+export const createStyles = StyleSheet.create({
+  container: {
+    height: 120,
+    backgroundColor: '#fff',
+    padding: 30,
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  title: {
+    fontWeight: 'bold',
+    color: colors.purple,
+    fontSize: 25
+  },
+  button: {
+    padding: 10,
+    borderRadius: 50,
+    backgroundColor: colors.purple,
+    marginRight: 20
+  }
+})

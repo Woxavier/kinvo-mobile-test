@@ -1,20 +1,12 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 import colors from '../../styles/colors'
 
-export const Container = styled.View`
-  flex-direction: row;
-`
-
-export const ValuePostive = styled.Text`
-  font-weight: bold;
-  color: ${colors.green};
-`
-
-export const ValueNegative = styled.Text`
-  font-weight: bold;
-`
-
-export const ValueZero = styled.Text`
-  font-weight: bold;
-  color: ${colors.lightGrey};
-`
+export const createStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row'
+  },
+  valueZero: {
+    fontWeight: 'bold',
+    color: colors.lightGrey
+  }
+})
