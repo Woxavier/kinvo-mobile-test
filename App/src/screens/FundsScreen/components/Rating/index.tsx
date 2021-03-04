@@ -5,10 +5,10 @@ import Presentational from './presentational'
 
 interface ratingProps {
   value: number
-  color: string
+  status: number
 }
 
-export default function Rating({ value, color }: ratingProps) {
+export default function Rating({ value, status }: ratingProps) {
   const [starsRatingValue, setStarsRatingValue] = useState<Array<number>>([])
   // eslint-disable-next-line prettier/prettier
   const [starCompleteRatingValue, setStarCompleteRatingValue] = useState<Array<number>>([])
@@ -32,6 +32,6 @@ export default function Rating({ value, color }: ratingProps) {
   return React.createElement(Presentational, {
     starsRatingValue,
     starCompleteRatingValue,
-    color
+    status
   })
 }

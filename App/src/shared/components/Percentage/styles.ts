@@ -8,5 +8,13 @@ export const createStyles = StyleSheet.create({
   valueZero: {
     fontWeight: 'bold',
     color: colors.lightGrey
+  },
+  positivePercentage: {
+    color: colors.green,
+    fontWeight: 'bold'
+  },
+  negativePercentage: {
+    color: colors.orange,
+    fontWeight: 'bold'
   }
 })

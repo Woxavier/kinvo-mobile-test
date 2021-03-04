@@ -1,3 +1,3 @@
-import CardNewFund from './NewFundCard'
+import NewFundCard from './NewFundCard'
 
-export { CardNewFund }
+export { NewFundCard }

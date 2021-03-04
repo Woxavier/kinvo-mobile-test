@@ -4,7 +4,7 @@
 import React from 'react'
 
 // Components
-import { CardNewFund } from './components'
+import { NewFundCard } from './components'
 import {
   FailedMessage,
   ScreensHeaderNavigate,
@@ -15,7 +15,7 @@ import { FlatList, View } from 'react-native'
 //Styles
 import { createStyles } from './styles'
 
-const renderItem = ({ item }: any) => <CardNewFund dados={item} />
+const renderItem = ({ item }: any) => <NewFundCard fund={item} />
 
 interface Props {
   onPressNavigateToHome: () => void

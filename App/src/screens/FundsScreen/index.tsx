@@ -36,10 +36,10 @@ export default function FundsScreen({ navigation }: any) {
   }
 
   function onPressRetry() {
-    obtainDataFunds()
+    obtainFundsData()
   }
 
-  async function obtainDataFunds() {
+  async function obtainFundsData() {
     setLoading(true)
     setError(false)
 
@@ -59,7 +59,7 @@ export default function FundsScreen({ navigation }: any) {
   }
 
   useEffect(() => {
-    obtainDataFunds()
+    obtainFundsData()
   }, [])
 
   return React.createElement(Presentational, {
