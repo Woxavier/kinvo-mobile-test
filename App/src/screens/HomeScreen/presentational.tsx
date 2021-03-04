@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 //Dependencies
 import React from 'react'
 
@@ -11,7 +12,7 @@ import { createStyles } from './styles'
 import { Funds, Pension, Actions } from '../../assets'
 import { Text, View } from 'react-native'
 
-export default function Presentational({ onPressNavigateToScreens }) {
+export default function Presentational({ onPressNavigateToScreens }: any) {
   const styles = createStyles
 
   return (
@@ -25,7 +26,7 @@ export default function Presentational({ onPressNavigateToScreens }) {
         title="Ações"
         info="Nacionais"
         img={Actions}
-        onPress={() => onPressNavigateToScreens('Fundos')}
+        onPress={() => onPressNavigateToScreens('Ações')}
       />
       <NavigationScreensCard
         title="Fundos"

@@ -2,9 +2,7 @@ import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
-import HomeScreen from './screens/HomeScreen'
-import FundsScreen from './screens/FundsScreen'
-import PensionsScreen from './screens/PensionsScreen'
+import { HomeScreen, FundsScreen, PensionsScreen, StockScreen } from './screens'
 
 const Stack = createStackNavigator()
 
@@ -24,6 +22,11 @@ export default function Routes() {
       <Stack.Screen
         name="Previdencia"
         component={PensionsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Ações"
+        component={StockScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
