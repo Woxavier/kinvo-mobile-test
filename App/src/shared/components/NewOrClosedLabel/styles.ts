@@ -10,7 +10,8 @@ export const createStyles = StyleSheet.create({
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 15
+    borderRadius: 15,
+    marginLeft: 20
   },
   containerClosed: {
     padding: 5,

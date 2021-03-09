@@ -3,28 +3,32 @@ import colors from '../../../../shared/styles/colors'
 
 export const creatStyles = StyleSheet.create({
   container: {
-    width: '90%',
     backgroundColor: '#fff',
-    margin: 20,
-    padding: 20,
-    borderRadius: 20
+    marginTop: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    padding: 15,
+    borderRadius: 10,
+    justifyContent: 'center',
+    elevation: 10
   },
   header: {
     justifyContent: 'space-around',
     flexDirection: 'row',
-    padding: 5
+    paddingRight: 10,
+    paddingLeft: 10
   },
   titleView: {
     flexDirection: 'column'
   },
   title: {
-    fontSize: 20,
+    fontSize: 19,
     color: colors.DarkGrey,
     fontWeight: 'bold',
     marginRight: 30
   },
   subTitle: {
-    fontSize: 14,
+    fontSize: 13,
     color: colors.DarkGrey,
     fontWeight: 'bold'
   },
@@ -38,16 +42,13 @@ export const creatStyles = StyleSheet.create({
   main: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    paddingBottom: 20
+    paddingBottom: 15
   },
   infos: {
-    color: colors.DarkGrey,
-    fontSize: 12,
-    fontWeight: 'bold'
+    color: colors.DarkGrey
   },
   minimum: {
     fontWeight: 'bold',
-    fontSize: 16,
     color: colors.DarkGrey
   }
 })

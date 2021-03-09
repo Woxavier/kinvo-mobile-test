@@ -18,10 +18,20 @@ interface StocksInterface {
     ticker: string
     minimumValue: number
     profitability: number
+    isFavorite: boolean
   }
+  onPress: () => void
 }
 
-export default function StockCard({ stocks }: StocksInterface) {
+export default function Presentational({ stocks, onPress }: StocksInterface) {
+  function Favorite() {
+    if (stocks.isFavorite) {
+      return <AntDesign name="heart" size={20} color="purple" />
+    }
+
+    return <AntDesign name="hearto" size={20} color="purple" />
+  }
+
   function Header() {
     return (
       <View>
@@ -31,8 +41,8 @@ export default function StockCard({ stocks }: StocksInterface) {
             <Text style={styles.subtitle}>{stocks.ticker}</Text>
           </View>
 
-          <TouchableOpacity>
-            <AntDesign name="heart" size={20} color="purple" />
+          <TouchableOpacity onPress={onPress}>
+            <Favorite />
           </TouchableOpacity>
         </View>
       </View>

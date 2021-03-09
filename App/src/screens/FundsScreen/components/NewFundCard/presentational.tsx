@@ -63,7 +63,7 @@ function Main({ fund }: CardProps) {
       <View style={styles.main}>
         <Text style={infoStyles}>Valor mínimo: </Text>
 
-        <Text style={infoStyles}>R$ {fund.minimumValue},00</Text>
+        <Text style={styles.minimum}>R$ {fund.minimumValue},00</Text>
       </View>
 
       <View style={styles.main}>

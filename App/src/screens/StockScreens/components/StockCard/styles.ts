@@ -26,7 +26,6 @@ export const createStyles = StyleSheet.create({
   },
   subtitle: {
     color: colors.DarkGrey,
-    fontSize: 13,
     fontWeight: 'bold'
   },
   div: {

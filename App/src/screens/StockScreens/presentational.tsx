@@ -21,18 +21,24 @@ interface Props {
   loading: boolean
   error: boolean
   stocks: any
+  favorite: boolean
   onPressRetry: () => void
+  onPressHandleFavorite: any
 }
-
-const renderItem = ({ item }: any) => <StockCard stocks={item} />
 
 export default function Presentational({
   onPressNavigateToHome,
   loading,
   error,
   stocks,
-  onPressRetry
+  favorite,
+  onPressRetry,
+  onPressHandleFavorite
 }: Props) {
+  const renderItem = ({ item, index }: any) => (
+    <StockCard stocks={item} onPress={() => onPressHandleFavorite(index)} />
+  )
+
   function Content() {
     if (loading) {
       return <Loading />
@@ -44,6 +50,7 @@ export default function Presentational({
 
     return (
       <FlatList
+        extraData={favorite}
         data={stocks}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
@@ -56,7 +63,6 @@ export default function Presentational({
   return (
     <View style={styles.container}>
       <ScreensHeaderNavigate title="Ações" onPress={onPressNavigateToHome} />
-
       <Content />
     </View>
   )

@@ -1,48 +1,54 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 //Dependencies
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+
+//Helpers
+import { sortStocks, sortFavoritesStocks } from './helpers'
+
+//Presentational
 import Presentational from './presentational'
 
 interface StocksInterface {
   id: number
   name: string
   ticker: string
-  minimumValue: number
+  minimumValue: string
   profitability: number
+  isFavorite: boolean
 }
 
 export default function StockScreen({ navigation }: any) {
   const [stocks, setStocks] = useState<[StocksInterface]>()
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [favorite, setFavorite] = useState(true)
 
   function onPressNavigateToHome() {
     navigation.navigate('Desafio')
   }
 
   function handleSucessGetDataStocks(dataStocks: [StocksInterface]) {
-    setLoading(false)
-    setStocks(dataStocks)
+    const stocks = sortStocks(dataStocks)
+    setStocks(stocks)
   }
 
   function handleFailedGetDataStocks() {
     setError(true)
-    setLoading(false)
   }
 
   function onPressRetry() {
-    obtainStocksData()
+    obtainStocks()
   }
 
-  async function obtainStocksData() {
+  async function obtainStocks() {
     setLoading(true)
     setError(false)
 
     const apiResponse = await axios
       .get('https://d68b5a2f-8234-4863-9c81-7c8a95dff8eb.mock.pstmn.io/stocks')
       .then((response) => {
-        console.log(response.data.data)
         return response.data
       })
       .catch(() => 'error')
@@ -53,10 +59,28 @@ export default function StockScreen({ navigation }: any) {
     } else {
       handleFailedGetDataStocks()
     }
+    setLoading(false)
+  }
+
+  function onPressHandleFavorite(value: number) {
+    if (stocks[value].isFavorite) {
+      stocks[value].isFavorite = false
+    } else {
+      stocks[value].isFavorite = true
+    }
+
+    if (favorite) {
+      setFavorite(false)
+    } else {
+      setFavorite(true)
+    }
+
+    const orderStock = sortFavoritesStocks(stocks)
+    setStocks(orderStock)
   }
 
   useEffect(() => {
-    obtainStocksData()
+    obtainStocks()
   }, [])
 
   return React.createElement(Presentational, {
@@ -64,6 +88,8 @@ export default function StockScreen({ navigation }: any) {
     loading,
     error,
     stocks,
-    onPressRetry
+    favorite,
+    onPressRetry,
+    onPressHandleFavorite
   })
 }
