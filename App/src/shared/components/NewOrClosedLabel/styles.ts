@@ -5,7 +5,7 @@ import colors from '../../styles/colors'
 export const createStyles = StyleSheet.create({
   containerNew: {
     padding: 5,
-    backgroundColor: colors.aqua,
+    backgroundColor: colors.newLabel,
     width: 70,
     height: 30,
     alignItems: 'center',
@@ -15,7 +15,7 @@ export const createStyles = StyleSheet.create({
   },
   containerClosed: {
     padding: 5,
-    backgroundColor: colors.DarkGrey,
+    backgroundColor: colors.bold,
     width: 70,
     height: 30,
     alignItems: 'center',

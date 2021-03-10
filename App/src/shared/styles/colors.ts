@@ -1,12 +1,12 @@
 const colors = {
-  green: '#32CD32',
-  orange: '#FF4500',
-  lightGrey: '#B5B5B5',
-  DarkGrey: '#696969',
-  purple: '#600396',
-  aqua: '#00CED1',
-  yellow: '#FFD700',
-  gray: '#e3e3e7'
+  postiveValues: '#32CD32',
+  negativeValues: '#FF4500',
+  enabled: '#B5B5B5',
+  bold: '#696969',
+  favorite: '#600396',
+  newLabel: '#00CED1',
+  star: '#FFD700',
+  background: '#e3e3e7'
 }
 
 export default colors

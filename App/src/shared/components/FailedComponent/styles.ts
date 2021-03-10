@@ -10,14 +10,14 @@ const createStyles = StyleSheet.create({
     padding: 50
   },
   title: {
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontWeight: 'bold',
     fontSize: 24,
     marginBottom: 20,
     textAlign: 'center'
   },
   subtitle: {
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontSize: 18,
     textAlign: 'center'
   },
@@ -25,7 +25,7 @@ const createStyles = StyleSheet.create({
     marginTop: 30,
     width: '80%',
     padding: 10,
-    backgroundColor: colors.purple,
+    backgroundColor: colors.favorite,
     alignItems: 'center',
     borderRadius: 20
   },

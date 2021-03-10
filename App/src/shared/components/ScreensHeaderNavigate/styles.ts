@@ -11,13 +11,13 @@ export const createStyles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    color: colors.purple,
+    color: colors.favorite,
     fontSize: 25
   },
   button: {
     padding: 10,
     borderRadius: 50,
-    backgroundColor: colors.purple,
+    backgroundColor: colors.favorite,
     marginRight: 20
   }
 })

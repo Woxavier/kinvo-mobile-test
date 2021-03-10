@@ -4,7 +4,7 @@ import colors from '../../shared/styles/colors'
 export const createStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.gray,
+    backgroundColor: colors.background,
     alignItems: 'center'
   },
   header: {
@@ -16,7 +16,7 @@ export const createStyles = StyleSheet.create({
   },
   Title: {
     fontWeight: 'bold',
-    color: colors.purple,
+    color: colors.favorite,
     fontSize: 25
   }
 })

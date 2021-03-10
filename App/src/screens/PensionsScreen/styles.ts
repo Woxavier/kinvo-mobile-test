@@ -4,7 +4,7 @@ import colors from '../../shared/styles/colors'
 export const createStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.gray,
+    backgroundColor: colors.background,
     alignItems: 'center',
     textAlign: 'center',
     paddingBottom: 30,
@@ -21,6 +21,6 @@ export const createStyles = StyleSheet.create({
     marginTop: 30,
     width: '100%',
     height: 1,
-    backgroundColor: colors.lightGrey
+    backgroundColor: colors.enabled
   }
 })

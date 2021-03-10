@@ -10,7 +10,7 @@ export const createStyles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontWeight: 'bold'
   }
 })

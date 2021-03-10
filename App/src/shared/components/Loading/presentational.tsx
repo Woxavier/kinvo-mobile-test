@@ -11,7 +11,7 @@ export default function Presentational() {
 
   return (
     <View style={styles.container}>
-      <ActivityIndicator size={80} color={colors.purple} />
+      <ActivityIndicator size={80} color={colors.favorite} />
     </View>
   )
 }

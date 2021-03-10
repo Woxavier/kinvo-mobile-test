@@ -23,19 +23,19 @@ export const creatStyles = StyleSheet.create({
   },
   title: {
     fontSize: 19,
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontWeight: 'bold',
     marginRight: 30
   },
   subTitle: {
     fontSize: 13,
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontWeight: 'bold'
   },
   divTitle: {
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: colors.gray,
+    borderColor: colors.background,
     marginTop: 10,
     marginBottom: 20
   },
@@ -45,10 +45,10 @@ export const creatStyles = StyleSheet.create({
     paddingBottom: 15
   },
   infos: {
-    color: colors.DarkGrey
+    color: colors.bold
   },
   minimum: {
     fontWeight: 'bold',
-    color: colors.DarkGrey
+    color: colors.bold
   }
 })

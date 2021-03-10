@@ -21,11 +21,11 @@ export const createStyles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontSize: 19
   },
   subtitle: {
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontWeight: 'bold'
   },
   div: {
@@ -41,6 +41,6 @@ export const createStyles = StyleSheet.create({
     marginBottom: 15
   },
   infosText: {
-    color: colors.DarkGrey
+    color: colors.bold
   }
 })

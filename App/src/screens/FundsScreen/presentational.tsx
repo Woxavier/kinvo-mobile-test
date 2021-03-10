@@ -6,7 +6,7 @@ import React from 'react'
 // Components
 import { NewFundCard } from './components'
 import {
-  FailedMessage,
+  FailedComponent,
   ScreensHeaderNavigate,
   Loading
 } from '../../shared/components'
@@ -40,7 +40,7 @@ export function Presentational({
     }
 
     if (error) {
-      return <FailedMessage onPress={onPressRetry} />
+      return <FailedComponent onPress={onPressRetry} />
     }
 
     return (

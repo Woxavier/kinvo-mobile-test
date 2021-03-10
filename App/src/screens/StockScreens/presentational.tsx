@@ -5,7 +5,7 @@ import React from 'react'
 //Components
 import { View, FlatList } from 'react-native'
 import {
-  FailedMessage,
+  FailedComponent,
   Loading,
   ScreensHeaderNavigate
 } from '../../shared/components'
@@ -45,7 +45,7 @@ export default function Presentational({
     }
 
     if (error) {
-      return <FailedMessage onPress={onPressRetry} />
+      return <FailedComponent onPress={onPressRetry} />
     }
 
     return (

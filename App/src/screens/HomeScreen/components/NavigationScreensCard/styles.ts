@@ -26,17 +26,17 @@ export const createStyles = StyleSheet.create({
     marginLeft: 10
   },
   bold: {
-    color: colors.purple,
+    color: colors.favorite,
     fontWeight: 'bold',
     fontSize: 18
   },
   info: {
-    color: colors.DarkGrey,
+    color: colors.bold,
     fontSize: 14
   },
   imgContainer: {
     padding: 20,
-    backgroundColor: colors.gray,
+    backgroundColor: colors.background,
     width: 80,
     borderRadius: 50,
     alignItems: 'center'
