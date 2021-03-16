@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { StatusBar } from 'react-native'
 
 //Routes
-import Routes from './routes'
+import Navigator from './navigation/navigator'
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <SafeAreaProvider>
         <NavigationContainer>
-          <Routes />
+          <Navigator />
         </NavigationContainer>
       </SafeAreaProvider>
     </>

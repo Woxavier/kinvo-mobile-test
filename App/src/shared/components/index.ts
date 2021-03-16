@@ -1,13 +1,13 @@
 import FailedComponent from './FailedComponent'
 import Loading from './Loading'
-import NewOrClosedLabel from './NewOrClosedLabel'
+import StatusLabel from './StatusLabel'
 import Percentage from './Percentage'
 import ScreensHeaderNavigate from './ScreensHeaderNavigate'
 
 export {
   FailedComponent,
   Loading,
-  NewOrClosedLabel,
+  StatusLabel,
   Percentage,
   ScreensHeaderNavigate
 }

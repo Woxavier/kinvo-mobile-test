@@ -6,7 +6,7 @@ import colors from '../../../../shared/styles/colors'
 import { creatStyles } from './styles'
 
 //Components
-import { NewOrClosedLabel, Percentage } from '../../../../shared/components'
+import { StatusLabel, Percentage } from '../../../../shared/components'
 import Rating from '../Rating'
 import { Text, View } from 'react-native'
 
@@ -26,12 +26,12 @@ const styles = creatStyles
 function Header({ fund }: CardProps) {
   const titleStyles = {
     ...styles.title,
-    color: fund.status === 2 ? colors.lightGrey : colors.DarkGrey
+    color: fund.status === 2 ? colors.enabled : colors.bold
   }
 
   const subTitleStyles = {
     ...styles.subTitle,
-    color: fund.status === 2 ? colors.lightGrey : colors.DarkGrey
+    color: fund.status === 2 ? colors.enabled : colors.bold
   }
 
   return (
@@ -41,7 +41,7 @@ function Header({ fund }: CardProps) {
         <Text style={subTitleStyles}>{fund.type}</Text>
       </View>
 
-      <NewOrClosedLabel status={fund.status} />
+      <StatusLabel status={fund.status} />
     </View>
   )
 }
@@ -49,7 +49,7 @@ function Header({ fund }: CardProps) {
 function Main({ fund }: CardProps) {
   const infoStyles = {
     ...styles.infos,
-    color: fund.status === 2 ? colors.lightGrey : colors.DarkGrey
+    color: fund.status === 2 ? colors.enabled : colors.bold
   }
 
   return (

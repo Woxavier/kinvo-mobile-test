@@ -21,7 +21,6 @@ interface Props {
   loading: boolean
   error: boolean
   stocks: any
-  favorite: boolean
   onPressRetry: () => void
   onPressHandleFavorite: any
 }
@@ -31,7 +30,6 @@ export default function Presentational({
   loading,
   error,
   stocks,
-  favorite,
   onPressRetry,
   onPressHandleFavorite
 }: Props) {
@@ -50,7 +48,6 @@ export default function Presentational({
 
     return (
       <FlatList
-        extraData={favorite}
         data={stocks}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}

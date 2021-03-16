@@ -4,13 +4,16 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
+//Navigation
+import Routes from '../../navigation/routes'
+
 //Helpers
 import { sortStocks, sortFavoritesStocks } from './helpers'
 
 //Presentational
 import Presentational from './presentational'
 
-interface StocksInterface {
+interface Stocks {
   id: number
   name: string
   ticker: string
@@ -20,21 +23,20 @@ interface StocksInterface {
 }
 
 export default function StockScreen({ navigation }: any) {
-  const [stocks, setStocks] = useState<[StocksInterface]>()
+  const [stocks, setStocks] = useState<[Stocks]>()
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
-  const [favorite, setFavorite] = useState(true)
 
   function onPressNavigateToHome() {
-    navigation.navigate('Desafio')
+    navigation.navigate(Routes.Home)
   }
 
-  function handleSucessGetDataStocks(dataStocks: [StocksInterface]) {
-    const stocks = sortStocks(dataStocks)
+  function handleSucessGetDataStocks(stocksData: [Stocks]) {
+    const stocks = sortStocks(stocksData)
     setStocks(stocks)
   }
 
-  function handleFailedGetDataStocks() {
+  function handleFailedObtainDataStocks() {
     setError(true)
   }
 
@@ -57,25 +59,23 @@ export default function StockScreen({ navigation }: any) {
       const { data } = apiResponse
       handleSucessGetDataStocks(data)
     } else {
-      handleFailedGetDataStocks()
+      handleFailedObtainDataStocks()
     }
     setLoading(false)
   }
 
-  function onPressHandleFavorite(value: number) {
-    if (stocks[value].isFavorite) {
-      stocks[value].isFavorite = false
+  function onPressHandleFavorite(index: number) {
+    const stocksItem = Object.values(stocks).map((value) => {
+      return value
+    })
+
+    if (stocksItem[index].isFavorite) {
+      stocksItem[index].isFavorite = false
     } else {
-      stocks[value].isFavorite = true
+      stocksItem[index].isFavorite = true
     }
 
-    if (favorite) {
-      setFavorite(false)
-    } else {
-      setFavorite(true)
-    }
-
-    const orderStock = sortFavoritesStocks(stocks)
+    const orderStock = sortFavoritesStocks(stocksItem)
     setStocks(orderStock)
   }
 
@@ -88,7 +88,6 @@ export default function StockScreen({ navigation }: any) {
     loading,
     error,
     stocks,
-    favorite,
     onPressRetry,
     onPressHandleFavorite
   })

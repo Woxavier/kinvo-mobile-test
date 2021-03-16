@@ -4,6 +4,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
+//Routes
+import Routes from '../../navigation/routes'
+
 //Presentational
 import Presentational from './presentational'
 
@@ -22,7 +25,7 @@ export default function FundsScreen({ navigation }: any) {
   const [loading, setLoading] = useState(true)
 
   function onPressNavigateToHome() {
-    navigation.navigate('Desafio')
+    navigation.navigate(Routes.Home)
   }
 
   function handleSucessGetDataFunds(dataFunds: [FundsInterface]) {

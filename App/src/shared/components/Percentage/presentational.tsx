@@ -17,7 +17,8 @@ interface PropsPercentage {
 const style = createStyles
 
 function PositivePercentage({ value, status }: PropsPercentage) {
-  if (status === 2) {
+  const isClosed = status == 2 ? true : false
+  if (isClosed) {
     return (
       <View style={style.container}>
         <AntDesign name="arrowup" size={20} style={style.valueZero} />
@@ -35,7 +36,8 @@ function PositivePercentage({ value, status }: PropsPercentage) {
 }
 
 function NegativePercentage({ value, status }: PropsPercentage) {
-  if (status === 2) {
+  const isClosed = status == 2 ? true : false
+  if (isClosed) {
     return (
       <View style={style.container}>
         <Feather style={style.valueZero} name="arrow-down" size={20} />

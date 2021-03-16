@@ -22,7 +22,7 @@ function FundClosed({ starsRatingValue, starCompleteRatingValue }: Props) {
     <View style={styles.container}>
       {starsRatingValue.map((value: number) => {
         return (
-          <Entypo name="star" size={24} color={colors.lightGrey} key={value} />
+          <Entypo name="star" size={24} color={colors.enabled} key={value} />
         )
       })}
 
@@ -31,7 +31,7 @@ function FundClosed({ starsRatingValue, starCompleteRatingValue }: Props) {
           <Entypo
             name="star-outlined"
             size={24}
-            color={colors.lightGrey}
+            color={colors.enabled}
             key={value}
           />
         )
@@ -44,9 +44,7 @@ function FundOpen({ starsRatingValue, starCompleteRatingValue }: Props) {
   return (
     <View style={styles.container}>
       {starsRatingValue.map((value: number) => {
-        return (
-          <Entypo name="star" size={24} color={colors.yellow} key={value} />
-        )
+        return <Entypo name="star" size={24} color={colors.star} key={value} />
       })}
 
       {starCompleteRatingValue.map((value: number) => {
@@ -54,7 +52,7 @@ function FundOpen({ starsRatingValue, starCompleteRatingValue }: Props) {
           <Entypo
             name="star-outlined"
             size={24}
-            color={colors.yellow}
+            color={colors.star}
             key={value}
           />
         )

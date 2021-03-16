@@ -53,7 +53,6 @@ export function sortStocks(stocks: Array<StocksInterface>) {
 
 export function sortFavoritesStocks(stocks: Array<StocksInterface>) {
   const stocksData = sortAlphabeticalStocks(stocks)
-
   const sortFavorites = stocksData.sort((a, b) => {
     if (a.isFavorite && b.isFavorite === false) {
       return -1

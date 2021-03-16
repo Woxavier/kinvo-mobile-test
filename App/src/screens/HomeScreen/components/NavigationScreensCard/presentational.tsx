@@ -6,7 +6,7 @@ import React from 'react'
 import { createStyles } from './styles'
 
 //Components
-import NewOrClosedLabel from '../../../../shared/components/NewOrClosedLabel'
+import StatusLabel from '../../../../shared/components/StatusLabel'
 import { View, Image, Text, TouchableOpacity } from 'react-native'
 
 interface PropsCards {
@@ -40,7 +40,7 @@ export default function Presentational({
           </View>
         </View>
 
-        {isNewBolder ? <NewOrClosedLabel status={1} /> : <></>}
+        {isNewBolder ? <StatusLabel status={1} /> : <></>}
       </View>
     </TouchableOpacity>
   )

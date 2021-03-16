@@ -11,6 +11,7 @@ import { createStyles } from './styles'
 //Assets
 import { Funds, Pension, Actions } from '../../assets'
 import { Text, View } from 'react-native'
+import Routes from '../../navigation/routes'
 
 export default function Presentational({ onPressNavigateToScreens }: any) {
   const styles = createStyles
@@ -26,20 +27,20 @@ export default function Presentational({ onPressNavigateToScreens }: any) {
         title="Ações"
         info="Nacionais"
         img={Actions}
-        onPress={() => onPressNavigateToScreens('Ações')}
+        onPress={() => onPressNavigateToScreens(Routes.Stocks)}
       />
       <NavigationScreensCard
         title="Fundos"
         info="De investimentos"
         img={Funds}
-        onPress={() => onPressNavigateToScreens('Fundos')}
+        onPress={() => onPressNavigateToScreens(Routes.Funds)}
         isNewBolder={true}
       />
       <NavigationScreensCard
         title="Previdências"
         info="Privadas"
         img={Pension}
-        onPress={() => onPressNavigateToScreens('Previdencia')}
+        onPress={() => onPressNavigateToScreens(Routes.Pensions)}
         isNewBolder={false}
       />
     </View>
