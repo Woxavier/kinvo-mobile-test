@@ -75,8 +75,8 @@ export default function StockScreen({ navigation }: any) {
       stocksItem[index].isFavorite = true
     }
 
-    const orderStock = sortFavoritesStocks(stocksItem)
-    setStocks(orderStock)
+    const orderedStock = sortFavoritesStocks(stocksItem)
+    setStocks(orderedStock)
   }
 
   useEffect(() => {
